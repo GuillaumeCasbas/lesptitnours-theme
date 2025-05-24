@@ -4,7 +4,7 @@ Theme URI: https://github.com/GuillaumeCasbas/lesptitnours-theme
 Author: Guillaume Casbas
 Author URI: https://github.com/GuillaumeCasbas
 Description: Theme designed to reground and share recipes and activity
-Version: 1.0.0
+Version: 0.1.0
 Tested up to: 5.4
 Requires PHP: 8.1
 License: The Unlicense 
@@ -122,12 +122,12 @@ h1, h2, h3, h4, h5, h6 {
 /*
  * Footer
  */
-.blog-footer {
+.site-footer {
   padding: 2.5rem 0;
   color: #999;
   text-align: center;
   background-color: #f9f9f9;
   border-top: .05rem solid #e5e5e5; }
 
-.blog-footer p:last-child {
+.site-footer p:last-child {
   margin-bottom: 0; }

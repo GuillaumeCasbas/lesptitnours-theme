@@ -20,13 +20,13 @@ if ( post_password_required() ) {
 }
 ?>
 
-<div id="comments" class="comments-area">
+<div id="comments" class="comments-area card">
 
 	<?php
 	// You can start editing here -- including this comment!
 	if ( have_comments() ) :
 		?>
-		<h2 class="comments-title">
+		<h2 class="comments-title card-header">
 			<?php
 			$lesptitnours_comment_count = get_comments_number();
 			if ( '1' === $lesptitnours_comment_count ) {
@@ -46,32 +46,37 @@ if ( post_password_required() ) {
 			?>
 		</h2><!-- .comments-title -->
 
-		<?php the_comments_navigation(); ?>
+        <div class="card-body">
 
-		<ol class="comment-list">
-			<?php
-			wp_list_comments(
-				array(
-					'style'      => 'ol',
-					'short_ping' => true,
-				)
-			);
-			?>
-		</ol><!-- .comment-list -->
+		    <?php the_comments_navigation(); ?>
 
-		<?php
-		the_comments_navigation();
+            <ol class="comment-list">
+                <?php
+                wp_list_comments(
+                    array(
+                        'style'      => 'ol',
+                        'short_ping' => true,
+                    )
+                );
+                ?>
+            </ol><!-- .comment-list -->
 
-		// If comments are closed and there are comments, let's leave a little note, shall we?
-		if ( ! comments_open() ) :
-			?>
-			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'lesptitnours' ); ?></p>
-			<?php
-		endif;
 
-	endif; // Check for have_comments().
+            <?php
+            the_comments_navigation();
 
-	comment_form();
-	?>
+            // If comments are closed and there are comments, let's leave a little note, shall we?
+            if ( ! comments_open() ) :
+                ?>
+                <p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'lesptitnours' ); ?></p>
+                <?php
+            endif;
+    endif; // Check for have_comments().
+        ?>
+        </div> <!-- card-body -->
 
+        <div class="card-body border-top">
+            <?php comment_form();
+        ?>
+        </div> <!-- card-body -->
 </div><!-- #comments -->

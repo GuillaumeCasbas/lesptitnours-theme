@@ -99,3 +99,6 @@ if (! file_exists(get_template_directory() . '/includes/primary-nav-walker.php')
 } else {
     require_once get_template_directory() . '/includes/primary-nav-walker.php';
 }
+
+require get_template_directory() . '/includes/template-functions.php';
+require get_template_directory() . '/includes/template-tags.php';
