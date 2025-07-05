@@ -23,42 +23,42 @@
 </head>
 
 <body <?php body_class(); ?>>
-    <div class="container">
-        <header class="blog-header py-3">
-            <div class="row flex-nowrap justify-content-between align-items-center">
 
-                <div class="col-4 text-center"></div>
-                <div class="col-4 text-center">
-                    <?php
-                    // the_custom_logo();
-                    if (is_front_page() && is_home()) :
-                    ?>
-                        <h1 class="site-title"><a class="blog-header-logo text-dark" href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></h1>
-                    <?php
-                    else :
-                    ?>
-                        <p class="site-title"><a class="blog-header-logo text-dark" href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></p>
-                    <?php
-                    endif;
-                    ?>
-                </div>
-                <div class="col-4 text-center">
-                <?php get_search_form(); ?>
+    <header class="py-4 px-0 border-bottom">
+        <div class="container-fluid">
+            <div class="row w-100 align-items-center g-0 gx-lg-3">
+                <div class="col">
+                    <div class="d-flex align-items-center">
+                        <?php // // the_custom_logo(); ?>
+                        <a class="navbar-brand d-block" href="<?php echo esc_url(home_url('/')); ?>" rel="home">
+                            <?php bloginfo('name'); ?>
+                        </a>
+                        <div class="w-100">
+                            <div class="ms-4 d-none d-lg-block">
+                                <?php get_search_form(); ?>
+                            </div>
+                        </div>
+                        <!--<a class="d-block" href="#">icon</a>-->
+                    </div>
                 </div>
             </div>
-        </header>
-        <nav id="site-navigation" class="navbar-expand">
-            <?php
-            wp_nav_menu(
-                array(
-                    'theme_location'  => 'menu-1',
-                    'menu_id'         => 'primary-menu',
-                    'menu_class'      => 'navbar-nav gap-3 justify-content-center',
-                    'container_class' => 'container-fluid',
-                    'walker'          => new WP_Bootstrap_Navwalker()
-                )
-            );
-            ?>
-        </nav><!-- #site-navigation -->
-
-    </div>
+            <div class="w-100 ms-4 d-block d-lg-none">
+                <div class="container">
+                    <?php get_search_form(); ?>
+                </div>
+            </div>
+        </div>
+    </header>
+    <nav class="navbar-expand">
+        <?php
+        wp_nav_menu(
+            array(
+                'theme_location'  => 'menu-1',
+                'menu_id'         => 'primary-menu',
+                'menu_class'      => 'navbar-nav gap-3 justify-content-center',
+                'container_class' => 'container-fluid border-bottom',
+                'walker'          => new WP_Bootstrap_Navwalker()
+            )
+        );
+        ?>
+    </nav>

@@ -28,7 +28,7 @@
         <strong class="d-inline-block mb-2 text-primary">
             <?php //the_category('', 'single'); ?>
         </strong>
-        <?php the_title('<h2 class="entry-title mb-0"><a class="text-dark" href="' . esc_url(get_permalink()) . '" rel="bookmark">', '</a></h2>'); ?>
+        <?php the_title('<h2 class="mb-0"><a class="text-dark" href="' . esc_url(get_permalink()) . '" rel="bookmark">', '</a></h2>'); ?>
         <div class="mb-1 text-muted">DATE</div>
         <p class="">
             <?php the_excerpt() ?>

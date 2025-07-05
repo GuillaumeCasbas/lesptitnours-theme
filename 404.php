@@ -10,22 +10,18 @@
 get_header();
 ?>
 
-	<main id="primary" class="container">
-
-		<section class="error-404 not-found">
-			<header class="page-header">
-				<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'lesptitnours' ); ?></h1>
-			</header><!-- .page-header -->
-
-			<div class="page-content">
+	<main>
+		<section>
+			<header>
+				<h1><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'lesptitnours' ); ?></h1>
+			</header>
+			<div>
 				<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'lesptitnours' ); ?></p>
 
 					<?php
 					// get_search_form();
-
 					the_widget( 'WP_Widget_Recent_Posts' );
 					?>
-
 					<div class="widget widget_categories">
 						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'lesptitnours' ); ?></h2>
 						<ul>
@@ -41,20 +37,16 @@ get_header();
 							);
 							?>
 						</ul>
-					</div><!-- .widget -->
-
+					</div>
 					<?php
-					/* translators: %1$s: smiley */
 					$lesptitnours_archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'lesptitnours' ), convert_smilies( ':)' ) ) . '</p>';
 					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$lesptitnours_archive_content" );
 
 					the_widget( 'WP_Widget_Tag_Cloud' );
 					?>
-
-			</div><!-- .page-content -->
-		</section><!-- .error-404 -->
-
-	</main><!-- #main -->
+			</div>
+		</section>
+	</main>
 
 <?php
 get_footer();

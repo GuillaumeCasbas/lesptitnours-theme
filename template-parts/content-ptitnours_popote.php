@@ -17,27 +17,27 @@
     ?>
         <header class="entry-header">
             <?php
-            the_title('<h1 class="entry-title">', '</h1>');
+            the_title('<h1>', '</h1>');
             if ('ptitnours_popote' === get_post_type()):
             ?>
-                <div class="entry-meta">
+                <div>
                     <?php
                     lesptitnours_posted_on();
                     ?>
-                </div><!-- .entry-meta -->
+                </div>
             <?php elseif ('post' === get_post_type()) :
             ?>
-                <div class="entry-meta">
+                <div>
                     <?php
                     lesptitnours_posted_on();
                     lesptitnours_posted_by();
                     ?>
-                </div><!-- .entry-meta -->
+                </div>
             <?php endif; ?>
-        </header><!-- .entry-header -->
+        </header>
 
         <div class="row">
-            <div class="entry-content clearfix">
+            <div class="col-md-5">
                 <?php
                 // Thumbnail
                 if (has_post_thumbnail()):
@@ -47,12 +47,31 @@
                         'large',
                         false,
                         array(
-                            'class' => 'img-thumbnail rounded col-md-3 float-md-start mb-3 me-md-5',
+                            'class' => 'img-fluid rounded',
                         )
                     );
                     echo $image;
-                endif;
+                endif; ?>
+            </div>
 
+            <div class="col-md-7">
+                <?php
+                // TODO extract to a global function (ex: get_ingredients(): array) in the plugin
+                $ingredients = get_post_meta($post->ID, 'popote_ingredients', true);
+
+                if (!empty($ingredients) && count($ingredients)): ?>
+                    <h2><?php echo __( 'Ingredients list', 'lesptitnours' ); ?></h2>
+                    <ul class="list-group mb-4">
+                        <?php foreach($ingredients as $ingredient): ?>
+                        <li class="list-group-item fw-lighter fst-italic">
+                            <span class="d-inline-block fw-bold me-3"><?php echo $ingredient['name']; ?></span>
+                            <?php echo "{$ingredient['quantity']} {$ingredient['unit']}"; ?>
+                        </li>
+                        <?php endforeach; ?>
+                    </ul>
+                <?php endif;?>
+
+                <?php
                 the_content(
                     sprintf(
                         wp_kses(
@@ -70,16 +89,17 @@
 
                 wp_link_pages(
                     array(
-                        'before' => '<div class="page-links">' . esc_html__('Pages:', 'lesptitnours'),
+                        'before' => '<div>' . esc_html__('Pages:', 'lesptitnours'),
                         'after'  => '</div>',
                     )
                 );
                 ?>
-            </div><!-- .entry-content -->
-        </div> <!-- .row -->
+            </div>
+
+        </div>
 
         <footer class="entry-footer">
-        </footer><!-- .entry-footer -->
+        </footer>
     <?php
     else:
         get_template_part('template-parts/_popote-card');
