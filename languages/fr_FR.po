@@ -118,3 +118,11 @@ msgstr "Pages:"
 #: template-parts/content.php:40
 msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr "Continuer la lecture<span class=\"screen-reader-text\"> \"%s\"</span>"
+
+#: template-parts/content-ptitnours_popote.php:63
+msgid "Ingredients list"
+msgstr "Ingrédients"
+
+#: includes/template-tag.php:30
+msgid "Posted on %s"
+msgstr "Publié le %s"
