@@ -12,9 +12,16 @@ License URI: LICENSE
 Text Domain: lesptitnours
 Tags: recipes, wip
 */
+
 main {
     article {
         padding: 2rem 0;
+    }
+}
+header {
+    .navbar-brand{
+        // TODO use --bs-navbar-brand-font-size
+        font-size: 2.5rem;
     }
 }
 .footer {
