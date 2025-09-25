@@ -61,6 +61,10 @@ msgstr "Thème: %1$s par %2$s."
 msgid "Primary"
 msgstr "Principal"
 
+#: functions.php:54
+msgid "Footer"
+msgstr "Pied de page"
+
 #: functions.php:130
 msgid "Sidebar"
 msgstr "Barre latérale"

@@ -51,6 +51,10 @@ msgstr ""
 msgid "Primary"
 msgstr ""
 
+#: functions.php:54
+msgid "Footer"
+msgstr "Pied de page"
+
 #: functions.php:130
 msgid "Sidebar"
 msgstr ""

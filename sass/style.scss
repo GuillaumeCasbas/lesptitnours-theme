@@ -12,11 +12,14 @@ License URI: LICENSE
 Text Domain: lesptitnours
 Tags: recipes, wip
 */
-
-// TODO Clean up unused styles
+main {
+    article {
+        padding: 2rem 0;
+    }
+}
 .footer {
     background-color: var(--bs-gray-200);
-    padding: 4rem 0;
+    padding: 3rem 0;
 }
 
 .post-navigation {

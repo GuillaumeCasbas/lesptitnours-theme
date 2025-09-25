@@ -10,7 +10,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    <?php if ( is_home() ): ?>
+    <?php if ( !is_home() ): ?>
 	<header>
 		<?php the_title( '<h1>', '</h1>' ); ?>
 	</header>

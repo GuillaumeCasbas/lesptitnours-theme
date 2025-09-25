@@ -13,6 +13,16 @@
 ?>
 
 <footer class="footer text-center">
+    <?php
+    wp_nav_menu(
+            array(
+                'theme_location'  => 'menu-2',
+                'menu_id'         => 'footer-menu',
+                'menu_class'      => 'd-flex flex-row navbar-nav gap-3 justify-content-center',
+                'container_class' => 'container border-bottom mb-3',
+            )
+        );
+    ?>
     <div>
         <?php
         printf(esc_html__('Theme: %1$s by %2$s.', 'lesptitnours'), 'lesptitnours', '<a href="https://github.com/GuillaumeCasbas">Guillaume Casbas</a>');
