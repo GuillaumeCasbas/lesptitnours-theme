@@ -37,6 +37,7 @@
         </header>
 
         <div class="row">
+            <?php if( has_post_thumbnail() ): ?>
             <div class="col-md-5">
                 <?php
                 // Thumbnail
@@ -53,8 +54,10 @@
                     echo $image;
                 endif; ?>
             </div>
-
             <div class="col-md-7">
+            <?php else: ?>
+            <div class="col-md-12">
+            <?php endif; ?>
                 <?php
                 // TODO extract to a global function (ex: get_ingredients(): array) in the plugin
                 $ingredients = get_post_meta($post->ID, 'popote_ingredients', true);
