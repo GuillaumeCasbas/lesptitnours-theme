@@ -25,26 +25,21 @@
 <body <?php body_class(); ?>>
 
     <header class="py-4 px-0 border-bottom">
-        <div class="container-fluid">
+        <div class="container">
             <div class="row w-100 align-items-center g-0 gx-lg-3">
                 <div class="col">
-                    <div class="d-flex align-items-center">
+                    <div class="d-lg-flex align-items-center text-center text-lg-left">
                         <?php // // the_custom_logo(); ?>
                         <a class="navbar-brand d-block" href="<?php echo esc_url(home_url('/')); ?>" rel="home">
                             <?php bloginfo('name'); ?>
                         </a>
                         <div class="w-100">
-                            <div class="ms-4 d-none d-lg-block">
+                            <div class="ps-lg-3 d-inline-block float-lg-end mt-3 mt-lg-0">
                                 <?php get_search_form(); ?>
                             </div>
                         </div>
                         <!--<a class="d-block" href="#">icon</a>-->
                     </div>
-                </div>
-            </div>
-            <div class="w-100 ms-4 d-block d-lg-none">
-                <div class="container">
-                    <?php get_search_form(); ?>
                 </div>
             </div>
         </div>
