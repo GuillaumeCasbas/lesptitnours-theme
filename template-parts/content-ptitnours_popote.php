@@ -37,7 +37,7 @@
         </header>
 
         <div class="row">
-            <?php if( has_post_thumbnail() ): ?>
+            <?php if( is_user_logged_in() && has_post_thumbnail() ): ?>
             <div class="col-md-5">
                 <?php
                 // Thumbnail

@@ -11,7 +11,7 @@
 <div class="card mb-4 box-shadow">
     <?php
     // Thumbnail
-    if (has_post_thumbnail()):
+    if (is_user_logged_in() && has_post_thumbnail()):
         $thumbnail_id = get_post_thumbnail_id();
         $image = wp_get_attachment_image(
             $thumbnail_id,
